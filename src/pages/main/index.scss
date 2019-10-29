@@ -1,0 +1,49 @@
+header.ant-layout-header {
+    padding: 0;
+    position: relative;
+    
+}
+.main-page-header-left{
+    width: 80%;
+    display: flex;
+    flex-wrap: nowrap;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    span.ant-avatar{
+        img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+        margin: 0 10px;
+        width: 38px;
+    }
+
+}
+.main-page-header-right {
+    width: 20%;
+    height: 32px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-around;
+    i.anticon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 18px;
+    }
+}
+.main-page-content {
+    .boutique-video-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .ant-tabs-nav .ant-tabs-tab {
+        margin: 0px;
+    }
+}

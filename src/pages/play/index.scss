@@ -1,0 +1,23 @@
+.play-page-wrap {
+    .play-page-header {
+        background: #fff;
+
+    }
+}
+.play-page-content {
+    .ant-tabs-nav-container {
+        display: flex;
+       justify-content: space-around;
+       .ant-tabs-tab {
+          
+       }
+    }
+}
+.play-page-content-message-input {
+    box-sizing: border-box;
+    padding: 10px;
+    background: rgb(240, 240, 240);
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+}

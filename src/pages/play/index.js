@@ -16,9 +16,9 @@ const handleInput = function(event) {
 const PlayPage = function (props) {
     const [videoSrc, setVideoSrc] = useState("");
     useEffect(() => {
-        axios.get("//localhost:8080/api/playPage/fetch/vedio").then((data) => {
-            console.log(data.data.src)
-            setVideoSrc(data.data.src || "");
+        axios.get("//localhost:8080/api/playPage/fetch/video").then((data) => {
+            console.log(data.data)
+           // setVideoSrc(data.data.src || "");
         })
     })
     return (<Fragment>

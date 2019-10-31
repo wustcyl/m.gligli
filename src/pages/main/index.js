@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Layout, Card, Input, Avatar, Icon, Tabs } from 'antd';
 import CarouselWrap  from "../../components/main-page/carousel";
 import G_Footer from "../../components/Footer";
+import CardWrap from "../../components/main-page/CardWrap";
 import "./index.scss";
 const { Header, Content } = Layout;
 const { Meta } = Card;
@@ -55,17 +56,7 @@ const MainPage = function (props) {
                         key="2"
                     >
                        <div className="boutique-video-wrap">
-                            {SourceMap.map((item, index) => {
-                                return (<Card
-                                    key={index}
-                                    hoverable
-                                    size="small"
-                                    style={{ width: "48%", maxWidth: "210px" }}
-                                    cover={<img alt="gligli-img" src="http://jfrft.com/uploads/allimg/160908/1_2138049081.jpg" />}
-                                >
-                                    <Meta title="智龙迷城" description="www.instagram.com2222222222222222222222222222222" />
-                                </Card>)
-                            })}
+                            <CardWrap type="2" />
                         </div>
                     </TabPane>
                     <TabPane tab={<span><Icon type="eye" />唯美卡片</span>}

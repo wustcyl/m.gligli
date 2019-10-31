@@ -25,7 +25,7 @@ const SearchPage = function (props) {
                          return (<Tag key={index} closable  onClose={(e) => { console.log(e)}}>volcano</Tag>)
                      })}
                 </Card>
-                <Button block style={{borderRadius: "0px"}}>清除全部历史记录</Button>
+                <Button block style={{borderRadius: "0px"}}><span style={{color: "#bbb", fontWeight: "800"}}>清除全部历史记录</span></Button>
             </div>
         </div>
     </Fragment>)

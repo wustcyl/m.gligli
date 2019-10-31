@@ -3,12 +3,13 @@ import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import { Layout, Menu, Icon } from 'antd';
 import MainPage from "./pages/main";
 import PlayPage from "./pages/play";
+import SearchPage from "./pages/search"
 import './App.scss';
- 
-
 const { Sider } = Layout;
 
-function App() {
+function App(props) {
+  const { location }  = props;
+  console.log(location, props);
   return (
     <BrowserRouter> 
       <Layout>
@@ -67,7 +68,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={MainPage} />
           <Route exact path="/cards" component={() => (<div>cards</div>)} />
-          <Route exact path="/search" component={() => (<div>search</div>)} />
+          <Route exact path="/search" component={SearchPage} />
           <Route exact path="/up" component={() => (<div>up</div>)} />
           <Route exact path="/home" component={() => (<div>home</div>)} />
           <Route exact path="/play" component={PlayPage} />

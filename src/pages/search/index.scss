@@ -1,0 +1,19 @@
+.search-page-wrap {
+    .search-page-searchbox {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 15px 15px;
+        background: #fff;
+        .ant-input {
+            border-radius: 15px;
+        }
+         
+    }
+    .search-page-search-item {
+         margin-top: 5px;
+         .ant-tag {
+            margin-bottom: 8px;
+         }
+         
+    }
+}

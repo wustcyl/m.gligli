@@ -4,12 +4,13 @@ import { Layout, Menu, Icon } from 'antd';
 import MainPage from "./pages/main";
 import PlayPage from "./pages/play";
 import SearchPage from "./pages/search"
+import DescPage from "./pages/desc";
 import './App.scss';
 const { Sider } = Layout;
+const { SubMenu } = Menu;
 
 function App(props) {
-  const { location }  = props;
-  console.log(location, props);
+  
   return (
     <BrowserRouter> 
       <Layout>
@@ -25,19 +26,35 @@ function App(props) {
             }}
         >
           <div className="logo" />
-            <Menu theme="dark" mode="inline"  defaultSelectedKeys={['1']}>
+            <Menu theme="dark" mode="inline">
               <Menu.Item key="1">
                 <Link to="/"> 
                   <Icon type="smile" />
                   <span className="nav-text">首页</span>
                 </Link>
               </Menu.Item>
-              <Menu.Item key="2">
-                <Link to="/detail"> 
-                  <Icon type="more" />
-                  <span className="nav-text">分类</span>
+              <SubMenu
+                  key="2"
+                  title={
+                    <span>
+                      <Icon type="more" />
+                      <span className="nav-text">分类</span>
+                    </span>
+                  }
+              >
+              <Menu.Item key="first">
+                <Link to="/kinds/greate"> 
+                    <Icon type="video-camera" />
+                    <span className="nav-text">精品动漫</span>
                 </Link>
               </Menu.Item>
+              <Menu.Item key="second">
+                <Link to="/kinds/spider"> 
+                      <Icon type="bug" />
+                      <span className="nav-text">爬虫动漫</span>
+                  </Link>
+              </Menu.Item>
+            </SubMenu>
               <Menu.Item key="3">
                 <Link to="/cards"> 
                   <Icon type="picture" />
@@ -57,7 +74,7 @@ function App(props) {
                 </Link>
               </Menu.Item>
               <Menu.Item key="6">
-                <Link to="/user"> 
+                <Link to="/home"> 
                   <Icon type="user" />
                   <span className="nav-text">个人中心</span>
                 </Link>
@@ -69,9 +86,11 @@ function App(props) {
           <Route exact path="/" component={MainPage} />
           <Route exact path="/cards" component={() => (<div>cards</div>)} />
           <Route exact path="/search" component={SearchPage} />
-          <Route exact path="/up" component={() => (<div>up</div>)} />
-          <Route exact path="/home" component={() => (<div>home</div>)} />
+          <Route exact path="/up" component={() => (<div>功能暂无</div>)} />
+          <Route exact path="/home" component={() => (<div>功能暂无</div>)} />
           <Route exact path="/play" component={PlayPage} />
+          <Route exact path="/kinds/*" component={() => (<div>动漫资源</div>)} />
+          <Route exact path="/desc" component={DescPage} />
         </Switch>
       </Layout>
     </Layout>

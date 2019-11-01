@@ -16,6 +16,7 @@
     "babel-preset-react-app": "^9.0.2",
     "camelcase": "^5.2.0",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
+    "consolidate": "^0.15.1",
     "css-loader": "2.1.1",
     "dotenv": "6.2.0",
     "dotenv-expand": "5.1.0",
@@ -143,5 +144,6 @@
   },
   "devDependencies": {
     "nodemon": "^1.19.4"
-  }
+  },
+  "homepage": "http://localhot:8080"
 }

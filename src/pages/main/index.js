@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { Layout, Card, Input, Avatar, Icon, Tabs } from 'antd';
+import { Link } from  "react-router-dom"
 import CarouselWrap  from "../../components/main-page/carousel";
 import G_Footer from "../../components/Footer";
 import CardWrap from "../../components/main-page/CardWrap";
@@ -23,8 +24,10 @@ const MainPage = function (props) {
                 />
             </div>
             <div className="main-page-header-right">
-                <Icon type=""/>
-                <Icon type="info-circle" />
+                <Link to="/desc" >
+                    <Icon type=""/>
+                    <Icon type="info-circle" />
+                </Link>
             </div>
         </Header>
         <Content style={{ margin: '24px 16px 0'}} className="main-page-content">

@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import { Layout, Tabs, Icon, Input } from 'antd';
 import axios from "axios";
 import "./index.scss";
-const {Footer, Content } = Layout;
+const { Content } = Layout;
 const { TabPane } = Tabs;
 
 
@@ -16,21 +16,15 @@ const handleInput = function(event) {
 const PlayPage = function (props) {
     const [videoSrc, setVideoSrc] = useState("");
     useEffect(() => {
-        axios.get("//localhost:8080/api/playPage/fetch/video").then((data) => {
-            console.log(data.data)
-           // setVideoSrc(data.data.src || "");
+        axios.get("//localhost:8080/api/playpage/fetch/video").then((data) => {
+            console.log("data", data)
+            setVideoSrc(data.data.src || "");
         })
-    })
+    }, [])
     return (<Fragment>
         <Layout className="play-page-wrap">
             <header className="play-page-header">
-
-            { videoSrc ? <video controls style={{width: "100%"}} controlsList="nodownload" >
-                    <source src={videoSrc} type="video/mp4" />
-                    <source src="movie.ogg" type="video/ogg" />
-                    您的浏览器不支持Video标签。
-                </video> : null}
-                
+                <e-player src={videoSrc} type="video/mp4" />
             </header>
             <Content className="play-page-content">
                 <Tabs defaultActiveKey="1">

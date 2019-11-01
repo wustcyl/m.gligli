@@ -16,7 +16,6 @@ const CardWrap = function (props) {
         }
         default: break;
     }
-    console.log(baseUrl)
     const [data, setData] = useState([]);
     useEffect(() => {
         axios.get(baseUrl).then((data) => {

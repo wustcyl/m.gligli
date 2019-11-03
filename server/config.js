@@ -1,4 +1,4 @@
-
+const bodyParser = require("body-parser");
 
 module.exports = function (app) {
     //cors 配置
@@ -7,5 +7,7 @@ module.exports = function (app) {
         res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length,Accept");
         res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS")
         next();
-    })
+    });
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({ extended: true}));
 }

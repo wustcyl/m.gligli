@@ -5,8 +5,8 @@ const mainPageRouter = require("./routers/main-page-router");
 const playPageRouter = require("./routers/play-page-router");
 const app = express();
 
-app.use(express.static(path.join(__dirname, '../build'))); 
 middlewareConfig(app);
+app.use(express.static(path.join(__dirname, '../build'))); 
 
 app.use("/api/mainpage", mainPageRouter);
 app.use("/api/playpage", playPageRouter);

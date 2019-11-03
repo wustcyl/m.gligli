@@ -88,7 +88,7 @@ function App(props) {
           <Route exact path="/search" component={SearchPage} />
           <Route exact path="/up" component={() => (<div>功能暂无</div>)} />
           <Route exact path="/home" component={() => (<div>功能暂无</div>)} />
-          <Route exact path="/play" component={PlayPage} />
+          <Route exact path="/play/:_id/:type" component={PlayPage} />
           <Route exact path="/kinds/*" component={() => (<div>动漫资源</div>)} />
           <Route exact path="/desc" component={DescPage} />
         </Switch>

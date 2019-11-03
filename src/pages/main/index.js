@@ -42,23 +42,15 @@ const MainPage = function (props) {
                         style={{marginBottom: "-15px"}}
                     >
                         <div className="boutique-video-wrap">
-                            {SourceMap.map((item, index) => {
-                                return (<Card
-                                    key={index}
-                                    hoverable
-                                    size="small"
-                                    style={{ width: "48%", maxWidth: "210px", marginBottom: "15px"}}
-                                    cover={<img alt="gligli-img" src="https://ae01.alicdn.com/kf/Hacccaa1c8347468eaa94940c2723d60bM.jpg" />}
-                                >
-                                    <Meta title="Europe Street beat" description="www.instagram.com2222222222222222222222222222222" />
-                                </Card>)
-                            })}
+                            <div className="video-wrap-title">精品动漫均是无广告的高清资源，站主很喜欢的风格哦</div>
+                            <CardWrap type="1" />
                         </div>
                     </TabPane>
                     <TabPane tab={<span><Icon type="bug" />爬虫动漫</span>}
                         key="2"
                     >
                        <div className="boutique-video-wrap">
+                           <div className="video-wrap-title">爬虫动漫均来自网络资源，请不要相信视频中任何广告</div>
                             <CardWrap type="2" />
                         </div>
                     </TabPane>

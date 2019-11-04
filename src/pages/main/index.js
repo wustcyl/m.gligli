@@ -26,7 +26,7 @@ const MainPage = function (props) {
             <div className="main-page-header-right">
                 <Link to="/desc" >
                     <Icon type=""/>
-                    <Icon type="info-circle" />
+                    <Icon type="info-circle"/>
                 </Link>
             </div>
         </Header>

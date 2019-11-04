@@ -5,22 +5,79 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://l2dwidget.js.org https://code.bdstatic.com https://unpkg.com/hls.js; object-src 'none';">
     <meta name="keywords" content="g站,番,动漫,图片,音乐,gli,gligli,g站网址,弹幕视频,动漫,动漫音乐,动画,番组,新番,追新番,新番动漫,新番吐槽">
     <meta
       name="description"
       content="gligli是国内的视频弹幕网站，这里有最及时的动漫新番，最棒的ACG氛围，最有创意的Up主。大家可以在这里找到许多欢乐。"
     />
+    <script type="text/javascript" charset="utf-8" async src="https://l2dwidget.js.org/lib/L2Dwidget.0.min.js"></script>
+    <style>
+      .live2d-widget-dialog-container {
+        width: 160px;
+        position: absolute;
+        bottom: 50%;
+        right: 0px;
+        transform-origin: right;
+        padding: 12px;
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+      }
+      .live2d-widget-dialog {
+        width: 100%;
+        height: 100%;
+        color: #917159;
+        font-size: 12px;
+        padding: 12px;
+        border: 2px solid rgb(236, 203, 180);
+        background: rgb(252, 248, 244);
+        box-sizing: border-box;
+        border-radius: 10px;
+        transform: rotate(-2deg);
+        opacity: 0;
+        transition: 200ms opacity;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+        animation: live2d-widget-dialog-tingle 4s ease-in-out 0s infinite alternate;
+      }
+      @keyframes live2d-widget-dialog-tingle {
+        0% { transform: translate(-1px, 1.5px) rotate(-2deg); }
+        100% { transform: translate(1px, -1.5px) rotate(2deg); }
+      }
+    </style>
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>GliGli动漫网，打造属于自己的动漫基地</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <div id="live2d-widget"><canvas id="live2dcanvas" width="220" height="432" style="position: fixed;opacity: 0.9;right: 0px;bottom: -20px;z-index: 99999;pointer-events: none"></canvas></div> 
+    <script src="https://l2dwidget.js.org/lib/L2Dwidget.min.js"></script>
+    <script type="text/javascript">
+      L2Dwidget
+        .on('*', (name) => {
+          // console.log('%c EVENT ' + '%c -> ' + name, 'background: #222; color: yellow', 'background: #fff; color: #000')
+        })
+        .init({
+          dialog: {
+            enable: true,
+            script: {
+              // 每空闲 10 秒钟，显示一条一言
+              'every idle 300s': '$hitokoto$',
+              'hover .star': '星星在天上而你在我心里 (*/ω＼*)',
+              'tap body': '人家已经不是小孩子了！',
+              'tap face': '哎呀，别碰我，会长不高呀！'
+            }
+          }, display: {
+            width: 100,
+            height: 150,
+            vOffset: 0,
+          }
+        });
+    </script>
+    <div id="live2d-widget"><canvas id="live2dcanvas" width="100px" height="220px" style="position: fixed;opacity: 0.9;right: 0px;bottom: 0px;z-index: 99999;pointer-events: none"></canvas></div> 
     <!-- <script type="text/javascript" charset="utf-8" src="https://cdn.jsdelivr.net/npm/live2d-widget@3.0.4/lib/L2Dwidget.0.min.js"></script>
     <script type="text/javascript"  src="https://cdn.jsdelivr.net/npm/live2d-widget@3.0.4/lib/L2Dwidget.min.js?_=1557308476616"></script> -->
-    <script src="https://crystalwindz.com/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887" ></script>
-    <script type="text/javascript">L2Dwidget.init({"model": {"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"https://crystalwindz.com/live2dw/assets/shizuku.model.json"}, "tagMode":false,"debug":false, "display":{"position":"right","width":55,"height":108,"hOffset":-12,"vOffset":-7,"border": 0},"mobile":{"show":true},"react":{"opacityDefault":1,"opacityOnHover":1},"log":false});</script>
+    <!-- <script src="https://crystalwindz.com/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887" ></script> -->
+    <!-- <script type="text/javascript">L2Dwidget.init({"model": {"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"https://crystalwindz.com/live2dw/assets/shizuku.model.json"}, "tagMode":false,"debug":false, "display":{"position":"right","width":55,"height":108,"hOffset":-12,"vOffset":-7,"border": 0},"mobile":{"show":true},"react":{"opacityDefault":1,"opacityOnHover":1},"log":false});</script> -->
     <script src="https://code.bdstatic.com/npm/@webcomponents/webcomponentsjs@2.2.10"></script>
     <script type="module">
       import { Eplayer } from 'https://code.bdstatic.com/npm/eplayer@1.3.15/packages/eplayer/index.js'

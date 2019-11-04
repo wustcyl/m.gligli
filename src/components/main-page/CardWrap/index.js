@@ -18,26 +18,35 @@ const CardWrap = function (props) {
             url = baseUrl + "/api/mainpage" + "/fetch/spidervideo";
             break;
         }
+        case 3: {
+            url = baseUrl + "/api/mainpage" + "/fetch/card";
+            break;
+        }
         default: break;
     }
     const [data, setData] = useState([]);
     useEffect(() => {
         axios.get(url).then((data) => {
+            console.log("data", data);
             setData(data.data);
         })
     }, []);
     return data.length !== 0 ? <Fragment>
         {data.map((item, index) => {
             return (
-                <Card
+                ((+props.type) !== 3)
+                ? (<Card
                     key={index}
-                    hoverable
+                    hoverable="true"
                     size="small"
                     style={{ width: "48%", maxWidth: "210px",borderRadius: "5px", marginBottom: "15px", maxHeight: "335px", display: "flex", flexDirection: "column", justifyContent: "space-between"}}
                     cover={<Link to={`/play/${item._id}/${+props.type}`}><img alt="gligli-img" src={item.bgImg} style={{width: "100%", maxHeight: "228px", borderRadius: "5px"}} /></Link>}
                 >
                     <Link to={`/play/${item._id}/${+props.type}`}><Meta title={item.name} description={item.director} style={{whiteSpace: "nowrap", overflow: "hidden"}}/></Link>
                 </Card>)
+                : <img alt="gligli-img" src={item.imgSrc} style={{width: "48%",  maxWidth: "210px", maxHeight: "250px", borderRadius: "10px", marginBottom: "10px", padding: "10px", boxShadow: "0 0 10px #9a9a9a"  }} key={index}/>
+            )
+                 
         })}
     </Fragment> : <Loading />
 }

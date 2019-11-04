@@ -57,7 +57,10 @@ const MainPage = function (props) {
                     <TabPane tab={<span><Icon type="eye" />唯美卡片</span>}
                         key="3"
                     >
-                       Tab 2
+                       <div className="boutique-video-wrap">
+                           <div className="video-wrap-title">图片搬运工，请不要对着我干坏事噢！</div>
+                            <CardWrap type="3" />
+                        </div>
                     </TabPane>
                     <TabPane tab={<span><Icon type="sound" />在线音乐</span>}
                         key="4"

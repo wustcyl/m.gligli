@@ -2,7 +2,8 @@ const express = require("express");
 const Router = express.Router();
 const genDB  = require("../dataBase");
 const animeDB = genDB("anime");
-const greateAnimeDB = genDB("greateAnime")
+const greateAnimeDB = genDB("greateAnime");
+const cardDB = genDB("card");
 
 //精品漫画
 Router.get("/fetch/greatevideo", function (req, res, next) {
@@ -17,5 +18,10 @@ Router.get("/fetch/spidervideo", function(req, res, next) {
         res.send(doc.slice(cnt, cnt + 12));
     }).limit(100)
 })
-
+Router.get("/fetch/card", function(req, res, next) {
+    cardDB.find({}, function(err, doc) {
+        const cnt = Math.floor(Math.random() * (doc.length - 12));
+        res.send(doc.slice(cnt, cnt + 12));
+    })
+})
 module.exports = Router;

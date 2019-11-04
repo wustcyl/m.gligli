@@ -35,7 +35,6 @@ const models = {
     },
     card: { 
         imgSrc: { type: String, require: true }, //图片路径
-        hash: { type: String, require: true }, //图片路径的hash值
     }
 }
 

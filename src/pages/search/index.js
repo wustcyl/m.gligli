@@ -24,7 +24,8 @@ const SearchPage = function (props) {
 
     const handleSearch = function (value) {
         value = "" + value;
-        if (value.trim() === "") {
+        value = value.trim();
+        if (value === "") {
             setIsSearch(false);
             return;
         }
@@ -40,7 +41,11 @@ const SearchPage = function (props) {
         window.localStorage.setItem("gligli-historyList", JSON.stringify(list));
 
         //发生请求
-
+        // axios.get().then((data) => {
+        //     setIsSearch(true);
+        //     setGreateVideo()
+        //     setSpiderVideo();
+        // })
         setIsSearch(true);
     }
 

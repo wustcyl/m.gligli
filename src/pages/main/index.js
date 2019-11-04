@@ -20,7 +20,7 @@ const MainPage = function (props) {
                     prefix={<Icon type="search" style={{ color: 'rgba(0,0,0,.25)' }} />} 
                     placeholder="搜索动漫, up主" 
                     style={{ borderRadius: "10px"}} 
-                    onPressEnter={(event) => {window.location.href= "/search" + "?" + "keywords=" + event.target.value}}
+                    onClick = {(event) => { window.location.href= "/search"}}
                 />
             </div>
             <div className="main-page-header-right">

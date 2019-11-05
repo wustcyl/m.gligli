@@ -45,7 +45,7 @@ const PlayPage = function (props) {
         <Layout className="play-page-wrap">
             <header className="play-page-header">
                 {
-                    (type == 1 && /.mp4$/.test(videoSrc))
+                    (type == 1)
                     ? (<e-player type="mp4" src={videoSrc} style={{width: "100%", height: '300px'}}></e-player>)
                     : (<iframe src={videoSrc} allowtransparency="true" frameBorder="0" title="" allowFullScreen={true} style={{width: "100%", height: '300px', scrolling: "yes", border: "0"}}/>)
                 } 

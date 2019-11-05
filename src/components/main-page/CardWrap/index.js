@@ -3,10 +3,30 @@ import { Link } from "react-router-dom";
 import Loading from "../../Loading";
 import axios from "axios";
 import { Card } from "antd";
+import "./index.scss";
 const { Meta } = Card;
 
 const baseUrl = "//cyl.2048game.xiaomy.net"
 //const baseUrl = "//localhost:8080"
+const showPicture = function (event) {
+    event = event || window.event;
+    const target = event.target || event.srcElement;
+    const div = document.createElement("div");
+    console.log("click")
+    const $body = document.querySelector("body");
+    div.className = "show-picture";
+
+    div.innerHTML = `
+        <img src=${target.src} alt="gligli-img" style="width: 100%; position: absolute; top: 50%; transform: translateY(-50%);"/>
+    `
+    div.addEventListener("touchend", function (event) {
+        event = event || window.event;
+        event.preventDefault();
+        div.remove();
+    });
+    $body.appendChild(div);
+
+}
 const CardWrap = function (props) {
     let url = "";
     switch(+props.type) {
@@ -27,7 +47,6 @@ const CardWrap = function (props) {
     const [data, setData] = useState([]);
     useEffect(() => {
         axios.get(url).then((data) => {
-            console.log("data", data);
             setData(data.data);
         })
     }, []);
@@ -44,7 +63,7 @@ const CardWrap = function (props) {
                 >
                     <Link to={`/play/${item._id}/${+props.type}`}><Meta title={item.name} description={item.director} style={{whiteSpace: "nowrap", overflow: "hidden"}}/></Link>
                 </Card>)
-                : <img alt="gligli-img" src={item.imgSrc} style={{width: "48%",  maxWidth: "210px", maxHeight: "250px", borderRadius: "10px", marginBottom: "10px", padding: "10px", boxShadow: "0 0 10px #9a9a9a"  }} key={index}/>
+                : <img onClick={(event) => { showPicture(event) }} alt="gligli-img" src={item.imgSrc} style={{width: "48%",  maxWidth: "210px", maxHeight: "250px", borderRadius: "10px", marginBottom: "10px", padding: "10px", boxShadow: "0 0 10px #9a9a9a"  }} key={index}/>
             )
                  
         })}

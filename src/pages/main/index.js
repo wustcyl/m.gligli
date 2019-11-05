@@ -16,12 +16,13 @@ const MainPage = function (props) {
         <Header style={{ background: '#fff', textAlign: 'center' }} >
             <div className="main-page-header-left">
                 <Avatar src="https://avatar.csdnimg.cn/3/5/1/2_wust_cyl.jpg" />
-                <Input  
+                <a href="/search" style={{display: "inline-block"}}><Input  
+                    disabled={true}
                     prefix={<Icon type="search" style={{ color: 'rgba(0,0,0,.25)' }} />} 
                     placeholder="搜索动漫, up主" 
                     style={{ borderRadius: "10px"}} 
                     onClick = {(event) => { window.location.href= "/search"}}
-                />
+                /></a>
             </div>
             <div className="main-page-header-right">
                 <Link to="/desc" >

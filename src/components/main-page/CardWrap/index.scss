@@ -1,0 +1,14 @@
+.show-picture {
+    position: fixed;
+    z-index: 999;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: rgb(255, 255, 255);
+    box-sizing: border-box;
+    img {
+        width: 80%;
+
+    }
+}

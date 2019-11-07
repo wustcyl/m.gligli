@@ -5,6 +5,7 @@ import MainPage from "./pages/main";
 import PlayPage from "./pages/play";
 import SearchPage from "./pages/search"
 import DescPage from "./pages/desc";
+import CardPage from "./pages/card";
 import './App.scss';
 const { Sider } = Layout;
 const { SubMenu } = Menu;
@@ -84,7 +85,7 @@ function App(props) {
       <Layout>  
         <Switch>
           <Route exact path="/" component={MainPage} />
-          <Route exact path="/cards" component={() => (<div>cards</div>)} />
+          <Route exact path="/cards" component={CardPage} />
           <Route exact path="/search" component={SearchPage} />
           <Route exact path="/up" component={() => (<div>功能暂无</div>)} />
           <Route exact path="/home" component={() => (<div>功能暂无</div>)} />

@@ -8,7 +8,7 @@ const { Panel } = Collapse;
 
 const colorOfSearchItemList = ["magenta", "red", "volcano", "orange", "gold", "lime", "green", "cyan", "blue", "geekblue", "purple"];
 
-const baseUrl = "//cyl.2048game.xiaomy.net"
+const baseUrl = "//xiaomy6666.xiaomy.net"
  
 
 const SearchPage = function (props) {

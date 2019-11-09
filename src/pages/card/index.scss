@@ -2,13 +2,13 @@
     padding: 0 10px;
     ul {
         list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        -moz-column-count:2; /* Firefox */
+        -webkit-column-count:2; /* Safari and Chrome */
+        column-count:2;
         margin-bottom: 0px;
         padding: 0px;
         li {
-            width: 48%;
+             
             max-width: 210px;
             max-height: 250px;
             border-radius: 10px;

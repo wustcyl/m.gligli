@@ -6,13 +6,12 @@ import { Card } from "antd";
 import "./index.scss";
 const { Meta } = Card;
 
-const baseUrl = "//cyl.2048game.xiaomy.net"
-//const baseUrl = "//localhost:8080"
+const baseUrl = "//xiaomy6666.xiaomy.net"
+
 const showPicture = function (event) {
     event = event || window.event;
     const target = event.target || event.srcElement;
     const div = document.createElement("div");
-    console.log("click")
     const $body = document.querySelector("body");
     div.className = "show-picture";
 

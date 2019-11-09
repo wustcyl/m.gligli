@@ -6,7 +6,7 @@ import "./index.scss";
 const { Content } = Layout;
 const { TabPane } = Tabs;
 
-const baseUrl = "//cyl.2048game.xiaomy.net";
+const baseUrl = "//xiaomy6666.xiaomy.net";
 
 const handleInput = function(event) {
     const message = document.getElementById("message");
@@ -64,15 +64,16 @@ const PlayPage = function (props) {
                                 })}
                             </ul>
                         </div>
-                        <Descriptions title={""} size="small" bordered="true">
-                            <Descriptions.Item label="番名">{dataInfo.name}</Descriptions.Item>
-                            <Descriptions.Item label="简介">{dataInfo.desc}</Descriptions.Item>
-                            <Descriptions.Item label="状态">{dataInfo.status}</Descriptions.Item>
-                            <Descriptions.Item label="主演">{dataInfo.starring}</Descriptions.Item>
-                            <Descriptions.Item label="评分">{dataInfo.score}</Descriptions.Item>
-                            <Descriptions.Item label="热度">{dataInfo.hot}</Descriptions.Item>
-                            <Descriptions.Item label="图片"><img src={dataInfo.bgImg} alt="gligli-img" className="desc-img"></img></Descriptions.Item>
-                        </Descriptions>
+                        <div className="video-desc-box">
+                            <img src={dataInfo.bgImg} alt="gligli-img" />
+                            <div className="video-desc-box-right">
+                                <h4>{dataInfo.name}<span>{dataInfo.score}分</span></h4>
+                                <p>{dataInfo.status}, {`全${(dataInfo.resource || []).length}集`}</p>
+                                <div className="desc">
+                                  {dataInfo.desc}
+                                </div>
+                            </div>
+                        </div>
                     </TabPane>
                     <TabPane tab=""
                         key="2"

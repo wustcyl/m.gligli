@@ -14,14 +14,12 @@ Router.get("/fetch/greatevideo", function (req, res, next) {
 //爬虫漫画
 Router.get("/fetch/spidervideo", function(req, res, next) {
     animeDB.find({}, function(err, doc) {
-        const cnt = Math.floor(Math.random() * 85);
-        res.send(doc.slice(cnt, cnt + 12));
-    }).limit(100)
+        res.send(doc);
+    }).limit(12);
 })
 Router.get("/fetch/card", function(req, res, next) {
     cardDB.find({}, function(err, doc) {
-        const cnt = Math.floor(Math.random() * (doc.length - 12));
-        res.send(doc.slice(cnt, cnt + 12));
-    })
+        res.send(doc);
+    }).limit(12);
 })
 module.exports = Router;

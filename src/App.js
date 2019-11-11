@@ -34,7 +34,7 @@ function App(props) {
                   <span className="nav-text">首页</span>
                 </Link>
               </Menu.Item>
-              <SubMenu
+              {/* <SubMenu
                   key="2"
                   title={
                     <span>
@@ -42,8 +42,8 @@ function App(props) {
                       <span className="nav-text">分类</span>
                     </span>
                   }
-              >
-              <Menu.Item key="first">
+              > */}
+              {/* <Menu.Item key="first">
                 <Link to="/kinds/greate"> 
                     <Icon type="video-camera" />
                     <span className="nav-text">精品动漫</span>
@@ -55,7 +55,7 @@ function App(props) {
                       <span className="nav-text">爬虫动漫</span>
                   </Link>
               </Menu.Item>
-            </SubMenu>
+            </SubMenu> */}
               <Menu.Item key="3">
                 <Link to="/cards"> 
                   <Icon type="picture" />

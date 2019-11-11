@@ -1,12 +1,14 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { Layout, Tabs, Icon, Input, Descriptions } from 'antd';
+import { Layout, Tabs, Icon, Input, Card } from 'antd';
+import { Link } from "react-router-dom";
 import Loading from "../../components/Loading";
 import axios from "axios";
 import "./index.scss";
 const { Content } = Layout;
 const { TabPane } = Tabs;
+const { Meta } = Card;
 
-const baseUrl = "//xiaomy6666.xiaomy.net";
+const baseUrl = "//localhost:8080";
 
 const handleInput = function(event) {
     const message = document.getElementById("message");
@@ -17,6 +19,7 @@ const handleInput = function(event) {
 }
 const PlayPage = function (props) {
     const [dataInfo, setDataInfo] = useState({});
+    const [recomData, setRecomData] = useState([]);
     const [isActive, setActive] = useState(0);
     const [videoSrc, setVideoSrc] = useState("");
     const { params } = props.match;
@@ -30,7 +33,9 @@ const PlayPage = function (props) {
                 _id
             }
         }).then((data) => {
+             
             setDataInfo(data.data[0] || {});
+            setRecomData((curData) => curData.concat(data.data.slice(1)));
             setVideoSrc(data.data[0].resource[0]);
         })
     }, []);
@@ -73,6 +78,23 @@ const PlayPage = function (props) {
                                   {dataInfo.desc}
                                 </div>
                             </div>
+                        </div>
+                        <div className="recom-video-wrap">
+                            <p className="title">更多推荐</p>
+                            { recomData.map((dataInfo, index) => {
+                                return (
+                                    <div className="video-desc-box" key={index}>
+                                        <Link to={`/play/${dataInfo._id}/${type}`} target="_blank"> <img src={dataInfo.bgImg} alt="gligli-img"  /></Link>
+                                        <div className="video-desc-box-right">
+                                            <h4>{dataInfo.name}<span>{dataInfo.score}分</span></h4>
+                                            <p>{dataInfo.status}, {`全${(dataInfo.resource || []).length}集`}</p>
+                                            <div className="desc" >
+                                                {dataInfo.desc}
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            }) }
                         </div>
                     </TabPane>
                     <TabPane tab=""

@@ -43,6 +43,7 @@
         padding: 10px 15px;
         box-sizing: border-box;
         width: 100%;
+        overflow: hidden;
         img {
             float: left;
             width: 30%;
@@ -71,6 +72,25 @@
                 color: #999;
             }
         }
+    }
+    .recom-video-wrap {
+        
+        img {
+            max-height: 120px !important;
+        }
+        p.title {
+            width: 100%;
+            box-sizing: border-box;
+            color: #999;
+            margin-left: 15px;
+            margin-bottom: 0px;
+        
+        }
+        margin-top: 10px;
+        .desc {
+            -webkit-line-clamp: 3 !important;
+        }
+       
     }
 }
 .play-page-content-message-input {

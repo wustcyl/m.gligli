@@ -8,7 +8,7 @@ const { Content } = Layout;
 const { TabPane } = Tabs;
 const { Meta } = Card;
 
-const baseUrl = "//xiaomy6666.xiaomy.net/";
+const baseUrl = "//xiaomy6666.xiaomy.net";
 
 const handleInput = function(event) {
     const message = document.getElementById("message");

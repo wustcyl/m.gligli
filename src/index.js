@@ -1,9 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
+import { isPc } from "./util";
 import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+console.log(isPc)
+//非PC端
+if (!isPc()) {
+    ReactDOM.render(<App />, document.getElementById('root'));
+} else {
+    ReactDOM.render(<h2>对不起，暂时不支持PC，请使用移动设备打开~~~</h2>,document.getElementById('root'))
+}
 
 
 window.onload = function () {

@@ -35,7 +35,6 @@ const MainPage = function (props) {
                 <div className="carousel-wrap">
                     <CarouselWrap />
                 </div>
-                <div style={{height: "20px"}}>推送</div>
                 <Tabs defaultActiveKey="1">
                     <TabPane  tab={<span><Icon type="video-camera" />精品动漫</span>}
                         key="1"

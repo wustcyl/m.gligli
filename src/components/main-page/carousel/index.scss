@@ -6,6 +6,20 @@
     overflow: hidden;
   }
   
-  .ant-carousel .slick-slide h3 {
-    color: #fff;
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}
+.carousel-wrap {
+  .item-wrap {
+    span {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        max-height: 42px;
+        font-size: 20px;
+        line-height: 22px;
+        color: #fff;
+        padding: 10px;
+    }
   }
+}

@@ -5,6 +5,13 @@ const animeDB = genDB("anime");
 const greateAnimeDB = genDB("greateAnime");
 const cardDB = genDB("card");
 
+//swiper
+Router.get("/fetch/swiper", function (req, res, next) {
+    greateAnimeDB.find({}, function(err, doc) {
+        res.send(doc);
+    }).limit(4);
+})
+
 //精品漫画
 Router.get("/fetch/greatevideo", function (req, res, next) {
     greateAnimeDB.find({}, function(err, doc) {

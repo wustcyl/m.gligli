@@ -4,7 +4,6 @@ import './index.scss';
 import { isPc } from "./util";
 import App from './App';
 
-console.log(isPc)
 //非PC端
 if (!isPc()) {
     ReactDOM.render(<App />, document.getElementById('root'));
